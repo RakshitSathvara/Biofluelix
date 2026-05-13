@@ -29,7 +29,7 @@ Node 18+ recommended.
 | `/about`    | About         | Mission, problem/solution, circular-economy steps, full founders' message                   |
 | `/products` | Products      | Briquette + pellet detail with SVG visuals, dark-mode comparison table, 5-feedstock guide   |
 | `/why`      | Why Biofuelix | Four reasons grid, interactive carbon offset calculator, 2026 regulatory snapshot, FAQ      |
-| `/contact`  | Contact       | Smart enquiry form (industry, fuel, tonnage, multi-select interests), sent-state confirmation |
+| `/contact`  | Contact       | Hero + direct channels card (email, phone, WhatsApp, trading hours, HQ)                      |
 
 Anchors like `/products#feedstock` scroll to the target section automatically on navigation.
 
@@ -89,7 +89,6 @@ The production build is a static SPA in `dist/`. Deploy to any static host (Verc
 - **Founder portrait** — stylized SVG silhouette labelled `PORTRAIT · TBD`. Replace with a real photo.
 - **Product card images** — Unsplash atmospheric backgrounds on the home preview; the product detail page uses SVG illustrations.
 - **Contact details** — `info@biofuelix.com`, `+91 90000 00000`, generic address — swap in the real values.
-- **Contact form** — submission sets local `sent` state only; wire up to a real endpoint (email API, CRM, etc.) before going live.
 - **Blog teaser** on `/why` links to `#` — full article isn't built.
 
 ## License
