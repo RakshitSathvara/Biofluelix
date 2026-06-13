@@ -11,9 +11,9 @@ export function Hero() {
       </div>
       <div className="shell">
         <div className="hero-eyebrow-row reveal">
-          <div className="eyebrow">Biofuelix Solutions · 2026</div>
+          <div className="eyebrow">Biofuelix Solutions</div>
           <div className="eyebrow no-bar" style={{ color: "var(--ink-soft)" }}>
-            <span className="mono">N 23.0761° · E 72.5520°</span>
+            {/* <span className="mono">N 23.0761° · E 72.5520°</span> */}
           </div>
         </div>
 
