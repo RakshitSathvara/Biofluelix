@@ -4,7 +4,7 @@ const PILLARS: Pillar[] = [
   {
     num: "01",
     title: "Quality Assurance",
-    body: "Every batch is tested for Gross Calorific Value, moisture, and ash residue. Lab reports follow each delivery — you get exactly what you pay for.",
+    body: "We partner only with manufacturers who meet our rigorous standards for moisture content, ash percentage, and mechanical durability.",
   },
   {
     num: "02",

@@ -41,6 +41,8 @@ function ProductsHero() {
           Engineering sustainable
           <br />
           <span className="accent-mark italic">energy solutions.</span>
+          <br />
+          <span className="accent-mark italic">Switch to biocoal.</span>
         </h1>
         <p
           className="serif reveal"
@@ -61,7 +63,7 @@ function ProductsHero() {
         </p>
         <div className="hero-meta-row reveal" style={{ transitionDelay: "0.3s" }}>
           <p className="lead">
-            From the heavy-duty workhorse to the precision-grade pellet, our range is built around
+            From the heavy-duty workhorse briquettes to the precision-grade pellet, our range is built around
             what your boiler actually needs — and what your auditors will ask about next quarter.
           </p>
           <div className="hero-cta-row">
@@ -78,9 +80,13 @@ function ProductsHero() {
   );
 }
 
+const PRODUCT_PHOTOS: Record<"briquettes" | "pellets", string> = {
+  briquettes: "/assets/briquettes.jpg",
+  pellets: "/assets/pellets.jpg",
+};
+
 function ProductVisual({ variant }: { variant: "briquettes" | "pellets" }) {
   const isBriquette = variant === "briquettes";
-  const pelletRand = pelletRotations;
   return (
     <div
       style={{
@@ -93,65 +99,46 @@ function ProductVisual({ variant }: { variant: "briquettes" | "pellets" }) {
           : "linear-gradient(140deg, #b89a4e 0%, #6b5320 100%)",
       }}
     >
-      <svg viewBox="0 0 400 500" width="100%" height="100%" style={{ position: "absolute", inset: 0 }}>
-        <defs>
-          <radialGradient id={`g-${variant}`} cx="0.5" cy="0.4">
-            <stop offset="0%" stopColor="rgba(245,240,230,0.18)" />
-            <stop offset="100%" stopColor="rgba(245,240,230,0)" />
-          </radialGradient>
-        </defs>
-        <rect width="400" height="500" fill={`url(#g-${variant})`} />
-
-        {isBriquette ? (
-          <g>
-            {[0, 1, 2].flatMap((row) =>
-              [0, 1, 2, 3].map((col) => {
-                const x = 60 + col * 75 + (row % 2) * 38;
-                const y = 200 + row * 60;
-                return (
-                  <g key={`${row}-${col}`} opacity={0.92}>
-                    <ellipse cx={x} cy={y} rx="34" ry="42" fill="#3a2a1a" />
-                    <ellipse cx={x - 2} cy={y - 2} rx="30" ry="38" fill="#4d3826" />
-                    <ellipse cx={x - 4} cy={y - 4} rx="22" ry="30" fill="#2a1f12" opacity="0.5" />
-                    <circle cx={x} cy={y} r="6" fill="#1a1208" />
-                  </g>
-                );
-              })
-            )}
-          </g>
-        ) : (
-          <g>
-            {pelletRand.map((rot, i) => {
-              const angle = (i * 137.5 * Math.PI) / 180;
-              const r = 30 + Math.sqrt(i) * 18;
-              const cx = 200 + Math.cos(angle) * r;
-              const cy = 280 + Math.sin(angle) * r * 0.7;
-              const w = 8;
-              const h = 18;
-              return (
-                <g key={i} transform={`translate(${cx},${cy}) rotate(${rot})`} opacity="0.9">
-                  <rect x={-w / 2} y={-h / 2} width={w} height={h} rx="4" fill="#5a4220" />
-                  <rect
-                    x={-w / 2 + 1}
-                    y={-h / 2 + 1}
-                    width={w - 2}
-                    height={h / 2.5}
-                    rx="3"
-                    fill="#7a5a2e"
-                  />
-                </g>
-              );
-            })}
-          </g>
-        )}
-
-        <g>
-          <rect x="20" y="460" width="200" height="24" fill="rgba(15,40,24,0.7)" rx="12" />
-          <text x="32" y="476" fill="#d4b962" fontFamily="Inter, sans-serif" fontSize="10" letterSpacing="2">
-            {isBriquette ? "BIO-COAL · 60-100mm" : "PRECISION · 6-12mm"}
-          </text>
-        </g>
-      </svg>
+      <img
+        src={PRODUCT_PHOTOS[variant]}
+        alt={
+          isBriquette
+            ? "High-density biomass briquettes — the eco-friendly bio-coal substitute"
+            : "Precision-grade biomass pellets for automated combustion systems"
+        }
+        loading="lazy"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(180deg, rgba(15,40,24,0) 50%, rgba(15,40,24,0.55) 100%)",
+        }}
+      />
+      <div
+        className="mono"
+        style={{
+          position: "absolute",
+          bottom: 16,
+          left: 16,
+          fontSize: 10,
+          letterSpacing: "0.2em",
+          color: "#d4b962",
+          background: "rgba(15,40,24,0.7)",
+          padding: "6px 12px",
+          borderRadius: 12,
+        }}
+      >
+        {isBriquette ? "BIO-COAL · 60-100mm" : "PRECISION · 6-12mm"}
+      </div>
       <div
         style={{
           position: "absolute",
@@ -172,12 +159,6 @@ function ProductVisual({ variant }: { variant: "briquettes" | "pellets" }) {
     </div>
   );
 }
-
-const pelletRotations = Array.from({ length: 90 }, (_, i) => {
-  const s = Math.sin(i * 12.9898) * 43758.5453;
-  const r = s - Math.floor(s);
-  return r * 60 - 30;
-});
 
 type DetailProps = {
   id: "briquettes" | "pellets";
@@ -462,7 +443,57 @@ function FeedstockSection() {
           </div>
         </div>
 
-        <div className="reveal" style={{ borderTop: "1px solid var(--line-strong)", marginTop: 64 }}>
+        <div
+          className="reveal"
+          style={{
+            position: "relative",
+            marginTop: 48,
+            height: "clamp(260px, 38vw, 440px)",
+            borderRadius: 8,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/assets/feedstock-processing.jpg"
+            alt="Agricultural residue processed into biomass feedstock at a Biofuelix-vetted facility"
+            loading="lazy"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(180deg, rgba(15,40,24,0) 40%, rgba(15,40,24,0.62) 100%)",
+            }}
+          />
+          <div
+            className="mono"
+            style={{
+              position: "absolute",
+              bottom: 24,
+              left: 24,
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--cream)",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+            }}
+          >
+            <span style={{ width: 24, height: 1, background: "var(--accent-bright)" }} />
+            Sourcing &amp; processing · Field to feedstock
+          </div>
+        </div>
+
+        <div className="reveal" style={{ borderTop: "1px solid var(--line-strong)", marginTop: 48 }}>
           {FEEDSTOCK.map((f) => (
             <div
               key={f.num}
@@ -636,6 +667,109 @@ function QualityPromise() {
   );
 }
 
+function BriquetteBenefits() {
+  return (
+    <section className="section tight">
+      <div className="shell">
+        <div
+          className="bb-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(40px, 6vw, 96px)",
+            alignItems: "center",
+          }}
+        >
+          <div className="reveal">
+            <div className="eyebrow" style={{ marginBottom: 24 }}>
+              Why briquettes
+            </div>
+            <h2 className="display-m serif" style={{ fontWeight: 400, marginBottom: 24 }}>
+              Pure sawdust, <span className="italic" style={{ color: "var(--accent)" }}>compressed</span>{" "}
+              into clean heat.
+            </h2>
+            <p style={{ color: "var(--ink-soft)", maxWidth: "46ch" }}>
+              No chemical binders, no fillers — just high-density agricultural residue that burns
+              hotter, longer, and cleaner than coal or firewood, leaving only a fraction of the ash.
+            </p>
+          </div>
+          <div className="reveal" style={{ transitionDelay: "0.1s" }}>
+            <img
+              src="/assets/briquettes-benefits.jpg"
+              alt="Biofuelix briquettes in a jute sack — 100% natural, high heat output, low ash content, eco-friendly, compressed sawdust"
+              loading="lazy"
+              style={{
+                width: "100%",
+                display: "block",
+                borderRadius: 8,
+                border: "1px solid var(--line)",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      <style>{`@media (max-width: 760px) { .bb-grid { grid-template-columns: 1fr !important; } }`}</style>
+    </section>
+  );
+}
+
+function PelletProduction() {
+  return (
+    <section className="section section-bone tight">
+      <div className="shell">
+        <div
+          className="reveal"
+          style={{
+            position: "relative",
+            height: "clamp(280px, 42vw, 520px)",
+            borderRadius: 8,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/assets/pellets-production.jpg"
+            alt="Freshly pressed biomass pellets pouring from a mill conveyor beside stacked timber"
+            loading="lazy"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(180deg, rgba(15,40,24,0) 45%, rgba(15,40,24,0.6) 100%)",
+            }}
+          />
+          <div
+            className="mono"
+            style={{
+              position: "absolute",
+              bottom: 24,
+              left: 24,
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--cream)",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+            }}
+          >
+            <span style={{ width: 24, height: 1, background: "var(--accent-bright)" }} />
+            At the mill · Precision-pressed pellets
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function ProductsPage() {
   return (
     <>
@@ -656,9 +790,11 @@ export default function ProductsPage() {
           "Textile Mills",
           "Food Processing",
           "Casting & Forging",
+          "Furnaces",
         ]}
         enquireWord="Briquettes"
       />
+      <BriquetteBenefits />
       <ProductDetailSection
         id="pellets"
         num="02"
@@ -679,6 +815,7 @@ export default function ProductsPage() {
         enquireWord="Pellets"
         swap
       />
+      <PelletProduction />
       <CompareSection />
       <FeedstockSection />
       <QualityPromise />

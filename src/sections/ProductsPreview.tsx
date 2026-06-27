@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "../components/icons";
 
-const BRIQUETTE_IMG = "https://images.unsplash.com/photo-1604335398480-dfecdc1cdf66?w=900&q=70";
-const PELLET_IMG = "https://images.unsplash.com/photo-1602773169655-ee14c4137b3a?w=900&q=70";
+const BRIQUETTE_IMG = "/assets/briquettes.jpg";
+const PELLET_IMG = "/assets/pellets.jpg";
 
 export function ProductsPreview() {
   return (
@@ -54,7 +54,7 @@ export function ProductsPreview() {
             <span className="product-tag">60–100mm</span>
             <div className="product-title serif italic">Briquettes</div>
             <div className="product-sub">
-              High-density logs from groundnut shell, mustard husk, and sawdust. The direct,
+              Also known as the Biocoal high-density logs from groundnut shell, mustard husk, and sawdust. The direct,
               eco-friendly substitute for coal and firewood.
             </div>
             <span className="product-arrow">

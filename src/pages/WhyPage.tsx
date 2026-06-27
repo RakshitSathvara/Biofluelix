@@ -13,7 +13,7 @@ function WhyHero() {
       </div>
       <div className="shell">
         <div className="hero-eyebrow-row reveal">
-          <div className="eyebrow">Why Biofuelix · 2026</div>
+          <div className="eyebrow">Why Biofuelix</div>
           <div className="eyebrow no-bar mono" style={{ color: "var(--ink-soft)" }}>
             Compliance · Cost · Carbon
           </div>
@@ -26,8 +26,7 @@ function WhyHero() {
         </h1>
         <div className="hero-meta-row reveal" style={{ transitionDelay: "0.3s" }}>
           <p className="lead">
-            Biofuelix Solutions combines sustainability, innovation, and industrial vision to support
-            the evolving energy needs of modern industries.
+          Biofuelix Solutions ensures you stay on the right side of the law while turning compliance into a competitive advantage.
           </p>
           <div className="hero-cta-row">
             <a href="#calculator" className="btn btn-ghost">
@@ -37,6 +36,17 @@ function WhyHero() {
               Talk to us <ArrowRight />
             </Link>
           </div>
+        </div>
+
+        <div className="hero-photo reveal" style={{ transitionDelay: "0.4s" }}>
+          <div
+            className="ph-fill"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(15,40,24,0.15) 0%, rgba(15,40,24,0.62) 100%), url("/assets/industrial-demand.jpg") center/cover',
+            }}
+          />
+          <div className="ph-tag">Industrial demand · The compliance era</div>
         </div>
       </div>
     </header>
@@ -170,7 +180,7 @@ const REASONS = [
       ],
       [
         "Subsidies",
-        "Many regions offer capital grants — some up to ₹10,800 per MTPH of capacity — for biomass-compatible boilers.",
+        "Many regions offer capital grants (some up to ₹10,800 per MTPH of capacity) for biomass-compatible boilers.",
       ],
     ],
   },
@@ -427,9 +437,9 @@ function BlogTeaser() {
               2026, the invoice price is only half the story. Three invisible ways your business
               leaks money on fossil fuel today.
             </p>
-            <span className="tlink">
+            {/* <span className="tlink">
               Read the full piece <ArrowUpRight />
-            </span>
+            </span> */}
           </div>
           <div
             style={{

@@ -18,13 +18,13 @@ function AboutHero() {
             Ahmedabad · India
           </div>
         </div>
-        <h1
+        <h2
           className="display-xxl hero-headline reveal"
-          style={{ transitionDelay: "0.15s", maxWidth: "20ch" }}
+          style={{ transitionDelay: "0.15s", maxWidth: "20ch", fontSize: "clamp(30px, 3.8vw, 60px)" }}
         >
           We help industries transition towards smarter, cleaner and more{" "}
           <span className="accent-mark italic">sustainable energy solutions.</span>
-        </h1>
+        </h2>
         <div className="hero-meta-row reveal" style={{ transitionDelay: "0.3s" }}>
           <p className="lead">
             At Biofuelix Solutions, we believe the transition to sustainable energy shouldn't be a
@@ -58,8 +58,58 @@ function Mission() {
               biomass fuels.
             </p>
             <p className="lead" style={{ marginTop: 24 }}>
-              We don't just trade commodities. We facilitate a cleaner future — one ton at a time.
+            We don't just trade commodities. We facilitate a cleaner future - ton by ton.
             </p>
+          </div>
+        </div>
+
+        <div
+          className="reveal"
+          style={{
+            position: "relative",
+            marginTop: 56,
+            height: "clamp(260px, 40vw, 480px)",
+            borderRadius: 8,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/assets/sustainable-sourcing.jpg"
+            alt="A seedling cupped in hands with live water, sunlight, temperature and soil-nutrient readouts — data-driven, sustainable sourcing"
+            loading="lazy"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(180deg, rgba(15,40,24,0) 45%, rgba(15,40,24,0.55) 100%)",
+            }}
+          />
+          <div
+            className="mono"
+            style={{
+              position: "absolute",
+              bottom: 24,
+              left: 24,
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--cream)",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+            }}
+          >
+            <span style={{ width: 24, height: 1, background: "var(--accent-bright)" }} />
+            Sustainable sourcing · Measured at the root
           </div>
         </div>
       </div>
@@ -145,7 +195,7 @@ function CircularEconomy() {
             <span className="italic" style={{ color: "var(--accent-bright)" }}>
               'agricultural waste'
             </span>{" "}
-            — groundnut shells, mustard husk, sawdust — into a high-value energy resource."
+            — groundnut shells, mustard husk & sawdust — into a high-value energy resource."
           </p>
           <p
             className="lead reveal"

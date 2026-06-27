@@ -28,7 +28,7 @@ export function Hero() {
 
         <div className="hero-meta-row reveal" style={{ transitionDelay: "0.3s" }}>
           <p className="lead">
-            We turn agricultural abundance into industrial-grade biomass fuel — vetted, tested, and
+            Agricultural abundance turned into industrial-grade biomass fuel — vetted, tested, and
             delivered with the precision modern industry demands.
           </p>
           <div className="hero-cta-row">
@@ -40,7 +40,7 @@ export function Hero() {
 
         <div className="stat-strip reveal-stagger" style={{ transitionDelay: "0.4s" }}>
           <div className="stat-cell">
-            <div className="stat-label">CO₂ Offset · per ton</div>
+            <div className="stat-label">CO₂ Offset · per ton biofuel</div>
             <StatValue to={1.5} suffix="t" decimals={1} />
             <div className="stat-detail">vs. equivalent thermal coal</div>
           </div>

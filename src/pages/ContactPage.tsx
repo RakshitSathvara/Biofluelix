@@ -126,14 +126,14 @@ function ContactBody() {
             </div>
           </ContactBlock>
 
-          <ContactBlock label="Trading hours">
+          <ContactBlock label="Office hours">
             Mon – Sat
             <br />
             9:00 AM – 6:30 PM IST
           </ContactBlock>
 
-          <ContactBlock label="Headquarters" last>
-            Biofuelix Solutions Pvt. Ltd.
+          <ContactBlock label="Reg. Address" last>
+            Biofuelix Solutions.
             <br />
             Ghatlodia, Ahmedabad, Gujarat, India
             <br />
@@ -141,6 +141,7 @@ function ContactBody() {
               Address details on request
             </span>
           </ContactBlock>
+          
         </div>
       </div>
     </section>

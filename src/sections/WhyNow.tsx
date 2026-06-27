@@ -17,11 +17,11 @@ const ITEMS = [
     title: "Carbon Credit Trading Scheme",
     body: "India's CCTS is live for textiles, cement, paper, and steel. Switching to Biofuelix biomass generates tradable Carbon Credit Certificates.",
   },
-  {
-    num: "D",
-    title: "Capital subsidies",
-    body: "Governments now offer grants — some up to ₹10,800 per MTPH — for facilities installing biomass-compatible boilers.",
-  },
+  // {
+  //   num: "D",
+  //   title: "Capital subsidies",
+  //   body: "Governments now offer grants — some up to ₹10,800 per MTPH — for facilities installing biomass-compatible boilers.",
+  // },
 ];
 
 export function WhyNow() {
@@ -30,7 +30,7 @@ export function WhyNow() {
       <div className="shell">
         <div className="section-header reveal">
           <div className="left">
-            <div className="eyebrow">Why now · 2026</div>
+            <div className="eyebrow">Why now</div>
             <h2 className="serif" style={{ marginTop: 16 }}>
               The era of{" "}
               <span className="italic" style={{ color: "var(--accent-bright)" }}>compliance</span>

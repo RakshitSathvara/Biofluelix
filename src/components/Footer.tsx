@@ -9,7 +9,6 @@ export function Footer() {
           <div className="footer-brand-block">
             <div className="display-m serif italic" style={{ fontWeight: 300 }}>
               Secure supply.<br />
-              Stable prices.<br />
               <span style={{ color: "var(--accent-bright)" }}>Sustainable future.</span>
             </div>
             <p style={{ marginTop: 24, opacity: 0.7, fontSize: 15, maxWidth: 320 }}>
@@ -48,7 +47,7 @@ export function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Biofuelix Solutions Pvt. Ltd.</span>
+          <span>© 2026 Biofuelix Solutions</span>
           <span>The bridge between fields and fuel.</span>
         </div>
       </div>
