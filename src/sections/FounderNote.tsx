@@ -15,7 +15,7 @@ function FounderPortrait() {
       }}
     >
       <img
-        src="/assets/anjali-nair.jpg"
+        src="/assets/anjali-nair.jpeg"
         alt="Anjali Nair, Founder of Biofuelix Solutions"
         loading="lazy"
         style={{
