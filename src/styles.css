@@ -876,7 +876,8 @@ body.anim-bold .reveal-stagger.in > * { transform: none; }
   font-size: 0.7em;
 }
 @keyframes marquee {
-  to { transform: translateX(-50%); }
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
 /* ===========================
