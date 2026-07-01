@@ -39,7 +39,7 @@ export function Footer() {
             <ul>
               <li><a href="mailto:info@biofuelix.com">info@biofuelix.com</a></li>
               <li><a href="tel:+919000000000">+91 90000 00000</a></li>
-              <li><a href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+              <li><a href="https://wa.me/919000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
               <li style={{ opacity: 0.6, fontSize: 13, marginTop: 8 }}>
                 Mon – Sat · 9:00 – 18:30 IST
               </li>

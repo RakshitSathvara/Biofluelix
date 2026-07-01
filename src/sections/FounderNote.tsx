@@ -85,7 +85,8 @@ export function FounderNote() {
               <div
                 style={{
                   fontFamily: "var(--font-script)",
-                  fontSize: 32,
+                  fontSize: 42,
+                  fontWeight: 600,
                   color: "var(--accent-bright)",
                   lineHeight: 1,
                 }}

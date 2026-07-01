@@ -29,7 +29,7 @@ function ProductsHero() {
       </div>
       <div className="shell">
         <div className="hero-eyebrow-row reveal">
-          <div className="eyebrow">Products · Catalogue 2026</div>
+          <div className="eyebrow">Products · Catalogue</div>
           <div className="eyebrow no-bar mono" style={{ color: "var(--ink-soft)" }}>
             Two formats · Five feedstocks
           </div>
@@ -42,7 +42,7 @@ function ProductsHero() {
           <br />
           <span className="accent-mark italic">energy solutions.</span>
           <br />
-          <span className="accent-mark italic">Switch to biocoal.</span>
+          <span className="accent-mark italic" style={{ color: "var(--leaf)" }}>Switch to biocoal.</span>
         </h1>
         <p
           className="serif reveal"
@@ -605,6 +605,61 @@ function FeedstockSection() {
   );
 }
 
+const MATRIX: [string, string, string][] = [
+  ["Highest heat output", "Sawdust / Groundnut shell", "Pellets or Briquettes"],
+  ["Lowest ash / maintenance", "Pure sawdust", "Premium Pellets"],
+  ["Lowest cost per ton", "Rice husk / Mustard husk", "Briquettes"],
+  ["Automated precision", "Wood waste", "6 – 8 mm Pellets"],
+];
+
+function SelectionMatrix() {
+  return (
+    <section className="section section-cream tight">
+      <div className="shell">
+        <div className="section-header reveal">
+          <div className="left">
+            <div className="eyebrow">Quick selection matrix</div>
+            <h2 className="serif" style={{ marginTop: 16 }}>
+              Match your priority
+              <br />
+              to the <span className="italic" style={{ color: "var(--accent)" }}>right fuel.</span>
+            </h2>
+          </div>
+          <div className="right">
+            <p className="lead">
+              Tell us what matters most — heat, cleanliness, cost, or automation — and this is the
+              feedstock and format we'd shortlist before you ever talk specs.
+            </p>
+          </div>
+        </div>
+
+        <div className="compare-table reveal">
+          <div className="compare-row head">
+            <div className="compare-cell">If your priority is…</div>
+            <div className="compare-cell">Recommended feedstock</div>
+            <div className="compare-cell">Product form</div>
+          </div>
+          {MATRIX.map((r) => (
+            <div className="compare-row" key={r[0]}>
+              <div className="compare-feature">{r[0]}</div>
+              <div className="compare-cell" data-label="Recommended feedstock">
+                {r[1]}
+              </div>
+              <div
+                className="compare-cell"
+                data-label="Product form"
+                style={{ color: "var(--forest)", fontWeight: 500 }}
+              >
+                {r[2]}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const QUALITY = [
   {
     t: "Moisture control",
@@ -818,6 +873,7 @@ export default function ProductsPage() {
       <PelletProduction />
       <CompareSection />
       <FeedstockSection />
+      <SelectionMatrix />
       <QualityPromise />
       <HomeCTA />
     </>

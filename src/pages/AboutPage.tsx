@@ -42,7 +42,21 @@ function AboutHero() {
   );
 }
 
-function Mission() {
+// The three core pillars from the brand brief — used as the supporting strip in
+// the text-only Mission layout so it still reads complete without the photo.
+const MISSION_POINTS: [string, string][] = [
+  ["Vetted supply chain", "Manufacturers held to strict moisture, ash, and durability standards."],
+  ["Operational integrity", "Bridging rural production and industrial demand — supply swings never reach your bottom line."],
+  ["Sustainability at scale", "Agricultural residue turned into high-energy fuel that lowers your carbon footprint."],
+];
+
+/**
+ * Our Mission section. Two finalized layouts share the same statement:
+ *   <Mission />            → text-only (statement + supporting pillars)
+ *   <Mission showImage />  → statement + the sustainable-sourcing photo (live)
+ * Swap the prop in <AboutPage> to switch between them.
+ */
+function Mission({ showImage = false }: { showImage?: boolean }) {
   return (
     <section className="section section-bone tight">
       <div className="shell">
@@ -58,60 +72,92 @@ function Mission() {
               biomass fuels.
             </p>
             <p className="lead" style={{ marginTop: 24 }}>
-            We don't just trade commodities. We facilitate a cleaner future - ton by ton.
+              We don't just trade commodities. We facilitate a cleaner future — ton by ton.
             </p>
           </div>
         </div>
 
-        <div
-          className="reveal"
-          style={{
-            position: "relative",
-            marginTop: 56,
-            height: "clamp(260px, 40vw, 480px)",
-            borderRadius: 8,
-            overflow: "hidden",
-          }}
-        >
-          <img
-            src="/assets/sustainable-sourcing.jpg"
-            alt="A seedling cupped in hands with live water, sunlight, temperature and soil-nutrient readouts — data-driven, sustainable sourcing"
-            loading="lazy"
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
+        {showImage ? (
           <div
+            className="reveal"
             style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(180deg, rgba(15,40,24,0) 45%, rgba(15,40,24,0.55) 100%)",
-            }}
-          />
-          <div
-            className="mono"
-            style={{
-              position: "absolute",
-              bottom: 24,
-              left: 24,
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "var(--cream)",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
+              position: "relative",
+              marginTop: 56,
+              height: "clamp(260px, 40vw, 480px)",
+              borderRadius: 8,
+              overflow: "hidden",
             }}
           >
-            <span style={{ width: 24, height: 1, background: "var(--accent-bright)" }} />
-            Sustainable sourcing · Measured at the root
+            <img
+              src="/assets/sustainable-sourcing.jpg"
+              alt="A seedling cupped in hands with live water, sunlight, temperature and soil-nutrient readouts — data-driven, sustainable sourcing"
+              loading="lazy"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(180deg, rgba(15,40,24,0) 45%, rgba(15,40,24,0.55) 100%)",
+              }}
+            />
+            <div
+              className="mono"
+              style={{
+                position: "absolute",
+                bottom: 24,
+                left: 24,
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--cream)",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+              }}
+            >
+              <span style={{ width: 24, height: 1, background: "var(--accent-bright)" }} />
+              Sustainable sourcing · Measured at the root
+            </div>
           </div>
-        </div>
+        ) : (
+          <div
+            className="reveal mission-points"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 32,
+              marginTop: 56,
+            }}
+          >
+            {MISSION_POINTS.map(([t, b]) => (
+              <div key={t} style={{ borderTop: "1px solid var(--line-strong)", paddingTop: 24 }}>
+                <div
+                  className="serif"
+                  style={{
+                    fontSize: 24,
+                    fontWeight: 400,
+                    letterSpacing: "-0.01em",
+                    marginBottom: 12,
+                    color: "var(--forest)",
+                  }}
+                >
+                  {t}
+                </div>
+                <div style={{ color: "var(--ink-soft)", fontSize: 15, lineHeight: 1.6 }}>{b}</div>
+              </div>
+            ))}
+            <style>{`@media (max-width: 880px) { .mission-points { grid-template-columns: 1fr 1fr !important; } }
+              @media (max-width: 520px) { .mission-points { grid-template-columns: 1fr !important; } }`}</style>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -289,7 +335,8 @@ function FullFounderNote() {
               <div
                 style={{
                   fontFamily: "var(--font-script)",
-                  fontSize: 36,
+                  fontSize: 48,
+                  fontWeight: 600,
                   color: "var(--forest)",
                   lineHeight: 1,
                   marginBottom: 8,
@@ -340,7 +387,7 @@ function FullFounderNote() {
               My goal was to create a trading house built on the values of transparency, reliability,
               and precision. We don't just facilitate transactions; we take on the responsibility of
               the supply chain so that you can focus on your core operations. Whether it is auditing
-              the calorific value of every batch or navigating the complexities of 2026's new carbon
+              the calorific value of every batch or navigating the complexities of new carbon
               regulations, we are in the trenches with you.
             </p>
             <p style={{ color: "var(--ink)", fontWeight: 500 }}>
@@ -348,9 +395,18 @@ function FullFounderNote() {
               ton of coal left in the ground, a field of stubble not burned in the open air, and a
               step toward a cleaner atmosphere for all of us.
             </p>
-            <p>
-              Thank you for trusting Biofuelix Solutions to be your partner in this journey. Let's
-              build a greener, more resilient industry together.
+            <p>Thank you for trusting Biofuelix Solutions to be your partner in this journey.</p>
+            <p
+              style={{
+                fontFamily: "var(--font-script)",
+                fontSize: "clamp(30px, 3.6vw, 48px)",
+                lineHeight: 1.15,
+                fontWeight: 600,
+                color: "var(--accent)",
+                margin: "4px 0 0",
+              }}
+            >
+              Let's build a greener, more resilient industry together.
             </p>
           </div>
         </div>
@@ -367,7 +423,8 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <Mission />
+      {/* Image version is live. For the text-only layout, use <Mission /> instead. */}
+      <Mission showImage />
       <ProblemSolution />
       <Pillars />
       <CircularEconomy />

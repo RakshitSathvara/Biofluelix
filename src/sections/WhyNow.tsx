@@ -3,25 +3,26 @@ import { ArrowRight } from "../components/icons";
 
 const ITEMS = [
   {
-    num: "A",
+    num: "01",
+    tag: "Mandate",
+    stat: "5–7%",
     title: "Mandatory co-firing",
     body: "FY 2025–26: all coal-based thermal plants and large industrial captive plants must blend 5–7% biomass pellets or briquettes.",
   },
   {
-    num: "B",
+    num: "02",
+    tag: "Penalty",
+    stat: "₹60 cr",
     title: "Heavy penalties",
-    body: "CAQM imposed over ₹60 crore in fines in April 2026 alone on facilities failing biomass blending norms. Enforcement is now active, not advisory.",
+    body: "CAQM imposed over ₹60 crore in fines in a single month on facilities failing biomass blending norms. Enforcement is now active, not advisory.",
   },
   {
-    num: "C",
+    num: "03",
+    tag: "Opportunity",
+    stat: "4 sectors",
     title: "Carbon Credit Trading Scheme",
     body: "India's CCTS is live for textiles, cement, paper, and steel. Switching to Biofuelix biomass generates tradable Carbon Credit Certificates.",
   },
-  // {
-  //   num: "D",
-  //   title: "Capital subsidies",
-  //   body: "Governments now offer grants — some up to ₹10,800 per MTPH — for facilities installing biomass-compatible boilers.",
-  // },
 ];
 
 export function WhyNow() {
@@ -40,18 +41,20 @@ export function WhyNow() {
           </div>
           <div className="right">
             <p className="lead">
-              In 2026, biomass is no longer an alternative — it is a statutory requirement. Three
-              forces have collapsed the timeline:
+              Biomass is no longer an alternative — it is a statutory requirement. Three forces have
+              collapsed the timeline:
             </p>
           </div>
         </div>
 
-        <div className="pillar-grid reveal-stagger" style={{ marginTop: 48 }}>
+        <div className="now-cards reveal-stagger">
           {ITEMS.map((it) => (
-            <div className="pillar-card" key={it.num}>
-              <div className="pillar-num">{it.num}</div>
-              <h3 className="pillar-title">{it.title}</h3>
-              <p className="pillar-body">{it.body}</p>
+            <div className="now-card" key={it.num}>
+              <span className="now-index" aria-hidden="true">{it.num}</span>
+              <span className="now-tag">{it.tag}</span>
+              <div className="now-stat">{it.stat}</div>
+              <h3 className="now-title">{it.title}</h3>
+              <p className="now-body">{it.body}</p>
             </div>
           ))}
         </div>

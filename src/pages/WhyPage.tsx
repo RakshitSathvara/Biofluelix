@@ -55,20 +55,20 @@ function WhyHero() {
 
 const VALUES = [
   {
-    t: "Sustainable Approach",
-    b: "Focused on environmentally responsible and future-ready energy systems.",
+    t: "Proven Consistency",
+    b: "The same calorific value, batch after batch — so your boiler runs on a known quantity, never a surprise.",
   },
   {
-    t: "Scalable Solutions",
-    b: "Designed to adapt to changing industrial and operational demands.",
+    t: "Verified Quality",
+    b: "Every shipment lab-tested for GCV, moisture, and ash, with reports to match. You get exactly what you pay for.",
   },
   {
-    t: "Innovation-Driven",
-    b: "Leveraging modern energy thinking to build smarter fuel ecosystems.",
+    t: "Supply Resilience",
+    b: "We stock through harvest cycles and draw on a wide producer network, so seasonal swings never stall your operations.",
   },
   {
-    t: "Long-Term Vision",
-    b: "Supporting sustainable industrial growth through clean-energy transformation.",
+    t: "Measurable Impact",
+    b: "Documented carbon savings and ESG-ready data — turning every ton delivered into reportable progress.",
   },
 ];
 
@@ -252,17 +252,6 @@ function FourReasons() {
                 }}
               >
                 <div>
-                  <div
-                    className="mono"
-                    style={{
-                      fontSize: 11,
-                      letterSpacing: "0.2em",
-                      color: "var(--accent)",
-                      marginBottom: 16,
-                    }}
-                  >
-                    {r.n} / 04
-                  </div>
                   <h3
                     className="display-m serif"
                     style={{ fontWeight: 400, letterSpacing: "-0.02em", marginBottom: 12 }}
@@ -306,31 +295,37 @@ function FourReasons() {
   );
 }
 
-const NOW_2026 = [
+const NOW_LANDSCAPE = [
   {
+    num: "01",
+    tag: "Statutory",
+    stat: "5–7%",
     t: "Mandatory co-firing",
     b: "FY 2025-26: all coal-based thermal power plants and large industrial captive plants must use a 5–7% biomass blend.",
-    tag: "STATUTORY",
   },
   {
+    num: "02",
+    tag: "Active",
+    stat: "₹60 cr",
     t: "₹60 crore in fines",
-    b: "CAQM imposed massive penalties in April 2026 alone on facilities failing biomass blending norms. Enforcement is live.",
-    tag: "ACTIVE",
+    b: "CAQM imposed massive penalties in a single month on facilities failing biomass blending norms. Enforcement is live.",
   },
   {
+    num: "03",
+    tag: "Opportunity",
+    stat: "4 sectors",
     t: "ICM goes live",
     b: "The Carbon Credit Trading Scheme covers textiles, cement, paper and steel. Biomass adopters generate tradable certificates.",
-    tag: "OPPORTUNITY",
   },
 ];
 
-function Now2026() {
+function NowLandscape() {
   return (
     <section className="section section-cream">
       <div className="shell">
         <div className="section-header reveal">
           <div className="left">
-            <div className="eyebrow">Why now · 2026 landscape</div>
+            <div className="eyebrow">Why now · The regulatory landscape</div>
             <h2 className="serif" style={{ marginTop: 16 }}>
               The screws have{" "}
               <span className="italic" style={{ color: "var(--accent)" }}>tightened.</span>
@@ -338,48 +333,23 @@ function Now2026() {
           </div>
           <div className="right">
             <p className="lead">
-              A snapshot of what's changed for industrial fuel buyers this year — and what changes
-              mean for your next quarter's compliance posture.
+              A snapshot of what's changed for industrial fuel buyers — and what those changes mean
+              for your next quarter's compliance posture.
             </p>
           </div>
         </div>
 
-        <div
-          className="reveal now-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 24,
-            marginTop: 64,
-          }}
-        >
-          {NOW_2026.map((c) => (
-            <div
-              key={c.t}
-              style={{ padding: 32, background: "var(--paper)", border: "1px solid var(--line)" }}
-            >
-              <div
-                className="mono"
-                style={{
-                  fontSize: 10,
-                  letterSpacing: "0.2em",
-                  color: "var(--accent)",
-                  marginBottom: 32,
-                }}
-              >
-                {c.tag}
-              </div>
-              <h3
-                className="serif"
-                style={{ fontSize: 28, fontWeight: 400, marginBottom: 16, letterSpacing: "-0.01em" }}
-              >
-                {c.t}
-              </h3>
-              <p style={{ color: "var(--ink-soft)", fontSize: 15, lineHeight: 1.6 }}>{c.b}</p>
+        <div className="now-cards reveal-stagger">
+          {NOW_LANDSCAPE.map((c) => (
+            <div className="now-card" key={c.num}>
+              <span className="now-index" aria-hidden="true">{c.num}</span>
+              <span className="now-tag">{c.tag}</span>
+              <div className="now-stat">{c.stat}</div>
+              <h3 className="now-title">{c.t}</h3>
+              <p className="now-body">{c.b}</p>
             </div>
           ))}
         </div>
-        <style>{`@media (max-width: 760px) { .now-grid { grid-template-columns: 1fr !important; } }`}</style>
       </div>
     </section>
   );
@@ -433,9 +403,9 @@ function BlogTeaser() {
               fortune.
             </h3>
             <p style={{ color: "var(--ink-soft)", marginBottom: 32, fontSize: 17 }}>
-              For decades, procurement managers had one goal: find the cheapest coal per ton. But in
-              2026, the invoice price is only half the story. Three invisible ways your business
-              leaks money on fossil fuel today.
+              For decades, procurement managers had one goal: find the cheapest coal per ton. But
+              today, the invoice price is only half the story. Three invisible ways your business
+              leaks money on fossil fuel right now.
             </p>
             {/* <span className="tlink">
               Read the full piece <ArrowUpRight />
@@ -475,7 +445,7 @@ function BlogTeaser() {
                 })}
               </g>
               <text x="60" y="60" fill="#d4b962" fontFamily="Inter, sans-serif" fontSize="11" letterSpacing="2">
-                HIDDEN COST · 2026
+                THE HIDDEN COST OF COAL
               </text>
               <line x1="60" y1="80" x2="120" y2="80" stroke="#d4b962" strokeWidth="1" />
             </svg>
@@ -613,7 +583,7 @@ export default function WhyPage() {
       <WhyValues />
       <FourReasons />
       <Co2Calculator />
-      <Now2026 />
+      <NowLandscape />
       <BlogTeaser />
       <FAQ />
       <HomeCTA />

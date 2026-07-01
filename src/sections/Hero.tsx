@@ -4,7 +4,7 @@ import { StatValue } from "../components/StatValue";
 
 export function Hero() {
   return (
-    <header className="hero">
+    <header className="hero hero-home">
       <div className="hero-bg-decor">
         <div className="blob blob-1"></div>
         <div className="blob blob-2"></div>
@@ -17,14 +17,33 @@ export function Hero() {
           </div>
         </div>
 
-        <h1 className="display-xxl hero-headline reveal" style={{ transitionDelay: "0.15s" }}>
-          <span>The bridge </span>
-          <span className="accent-mark italic">between</span>
-          <br />
-          <span>fields </span>
-          <FlameLeaf size="0.85em" color="var(--leaf)" />
-          <span> & fuel.</span>
+        {/* Headline reveals line-by-line: each line wipes up from inside a clipping mask. */}
+        <h1 className="display-xxl hero-headline hero-headline-lines">
+          <span className="hl-mask">
+            <span className="hl-line">
+              The bridge <span className="accent-mark italic">between</span>
+            </span>
+          </span>
+          <span className="hl-mask">
+            <span className="hl-line">
+              fields{" "}
+              <span className="hero-leaf-sway">
+                <FlameLeaf size="0.85em" color="var(--leaf)" />
+              </span>{" "}
+              &amp; fuel.
+            </span>
+          </span>
         </h1>
+
+        {/* "Fields → Fuel" bridge ribbon: a gold→green line with embers drifting across it. */}
+        <div className="hero-bridge" aria-hidden="true">
+          <span className="hb-cap hb-field">Fields</span>
+          <span className="hb-cap hb-fuel">Fuel</span>
+          <span className="hb-line"></span>
+          <span className="hb-ember" style={{ animationDelay: "1s" }}></span>
+          <span className="hb-ember" style={{ animationDelay: "2.1s" }}></span>
+          <span className="hb-ember" style={{ animationDelay: "3.2s" }}></span>
+        </div>
 
         <div className="hero-meta-row reveal" style={{ transitionDelay: "0.3s" }}>
           <p className="lead">
@@ -34,6 +53,9 @@ export function Hero() {
           <div className="hero-cta-row">
             <Link to="/products" className="btn btn-primary">
               Explore products <ArrowRight />
+            </Link>
+            <Link to="/contact" className="btn btn-ghost">
+              Talk to us
             </Link>
           </div>
         </div>
