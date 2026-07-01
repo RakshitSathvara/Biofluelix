@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight } from "../components/icons";
+import { ArrowRight } from "../components/icons";
 import { HomeCTA } from "../sections/HomeCTA";
 import { Co2Calculator } from "../sections/Co2Calculator";
 

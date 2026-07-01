@@ -14,44 +14,18 @@ function FounderPortrait() {
         background: "linear-gradient(135deg, #2d5a3d 0%, #0f2818 100%)",
       }}
     >
-      <svg viewBox="0 0 400 500" width="100%" height="100%" style={{ position: "absolute", inset: 0 }}>
-        <defs>
-          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#3d6f4d" />
-            <stop offset="100%" stopColor="#0f2818" />
-          </linearGradient>
-          <radialGradient id="lightGrad" cx="0.4" cy="0.3">
-            <stop offset="0%" stopColor="rgba(212,185,98,0.25)" />
-            <stop offset="100%" stopColor="rgba(212,185,98,0)" />
-          </radialGradient>
-        </defs>
-        <rect width="400" height="500" fill="url(#bgGrad)" />
-        <rect width="400" height="500" fill="url(#lightGrad)" />
-
-        <g opacity="0.85">
-          <circle cx="200" cy="206" r="56" fill="#1a3a24" />
-          <path d="M 116 500 Q 116 326 200 294 Q 284 326 284 500 Z" fill="#1a3a24" />
-        </g>
-
-        <g opacity="0.15" fill="#d4b962">
-          <path d="M 350 80 Q 380 100 370 140 Q 360 110 340 110 Z" />
-          <path d="M 50 400 Q 30 420 50 450 Q 70 425 50 400 Z" />
-        </g>
-
-        <g>
-          <rect x="20" y="460" width="170" height="24" fill="rgba(15,40,24,0.7)" rx="12" />
-          <text
-            x="32"
-            y="476"
-            fill="#d4b962"
-            fontFamily="Inter, sans-serif"
-            fontSize="10"
-            letterSpacing="2"
-          >
-            FOUNDER · AHMEDABAD
-          </text>
-        </g>
-      </svg>
+      <img
+        src="/assets/anjali-nair.jpg"
+        alt="Anjali Nair, Founder of Biofuelix Solutions"
+        loading="lazy"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
       <div
         style={{
           position: "absolute",
@@ -67,7 +41,7 @@ function FounderPortrait() {
           backdropFilter: "blur(8px)",
         }}
       >
-        PORTRAIT · TBD
+        PORTRAIT · ANJALI NAIR
       </div>
     </div>
   );
