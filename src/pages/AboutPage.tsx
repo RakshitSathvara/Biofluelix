@@ -361,12 +361,14 @@ function FullFounderNote() {
             className="reveal"
             style={{
               transitionDelay: "0.15s",
-              fontSize: 18,
+              fontFamily: "var(--font-script)",
+              fontSize: "clamp(25px, 2.1vw, 32px)",
+              fontWeight: 500,
               color: "var(--ink-soft)",
-              lineHeight: 1.7,
+              lineHeight: 1.34,
               display: "flex",
               flexDirection: "column",
-              gap: 24,
+              gap: 22,
             }}
           >
             <p>
