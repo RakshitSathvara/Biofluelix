@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "../components/icons";
-import { Pillars } from "../sections/Pillars";
 import { HomeCTA } from "../sections/HomeCTA";
 import { FounderPortrait } from "../sections/FounderNote";
 
@@ -89,8 +88,8 @@ function Mission({ showImage = false }: { showImage?: boolean }) {
             }}
           >
             <img
-              src="/assets/sustainable-sourcing.jpg"
-              alt="A seedling cupped in hands with live water, sunlight, temperature and soil-nutrient readouts — data-driven, sustainable sourcing"
+              src="/assets/mission-biomass-supply.webp"
+              alt="A technician quality-checks biomass briquettes beside stocked inventory and a truck prepared for industrial delivery"
               loading="lazy"
               style={{
                 position: "absolute",
@@ -124,7 +123,7 @@ function Mission({ showImage = false }: { showImage?: boolean }) {
               }}
             >
               <span style={{ width: 24, height: 1, background: "var(--accent-bright)" }} />
-              Sustainable sourcing · Measured at the root
+              Quality checked · Ready at industrial scale
             </div>
           </div>
         ) : (
@@ -361,12 +360,14 @@ function FullFounderNote() {
             className="reveal"
             style={{
               transitionDelay: "0.15s",
-              fontSize: 18,
+              fontFamily: "var(--font-script)",
+              fontSize: "clamp(25px, 2.1vw, 32px)",
+              fontWeight: 500,
               color: "var(--ink-soft)",
-              lineHeight: 1.7,
+              lineHeight: 1.34,
               display: "flex",
               flexDirection: "column",
-              gap: 24,
+              gap: 22,
             }}
           >
             <p>
@@ -426,7 +427,6 @@ export default function AboutPage() {
       {/* Image version is live. For the text-only layout, use <Mission /> instead. */}
       <Mission showImage />
       <ProblemSolution />
-      <Pillars />
       <CircularEconomy />
       <FullFounderNote />
       <HomeCTA />

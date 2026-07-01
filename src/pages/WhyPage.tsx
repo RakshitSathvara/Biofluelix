@@ -39,13 +39,13 @@ function WhyHero() {
         </div>
 
         <div className="hero-photo reveal" style={{ transitionDelay: "0.4s" }}>
-          <div
+          <img
             className="ph-fill"
-            style={{
-              background:
-                'linear-gradient(180deg, rgba(15,40,24,0.15) 0%, rgba(15,40,24,0.62) 100%), url("/assets/industrial-demand.jpg") center/cover',
-            }}
+            src="/assets/why-hero-biomass.png"
+            alt="Biomass briquettes and pellets outside a modern industrial boiler facility"
+            fetchPriority="high"
           />
+          <div className="hero-photo-shade" aria-hidden="true" />
           <div className="ph-tag">Industrial demand · The compliance era</div>
         </div>
       </div>
@@ -414,41 +414,18 @@ function BlogTeaser() {
           <div
             style={{
               aspectRatio: "1/1",
-              background: "linear-gradient(135deg, var(--forest), var(--forest-deep))",
               borderRadius: 4,
               position: "relative",
               overflow: "hidden",
             }}
           >
-            <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ position: "absolute", inset: 0 }}>
-              <defs>
-                <radialGradient id="blog-grad" cx="0.7" cy="0.3">
-                  <stop offset="0%" stopColor="rgba(212,185,98,0.4)" />
-                  <stop offset="100%" stopColor="rgba(212,185,98,0)" />
-                </radialGradient>
-              </defs>
-              <rect width="400" height="400" fill="url(#blog-grad)" />
-              <g transform="translate(60, 280)">
-                {Array.from({ length: 8 }, (_, i) => {
-                  const h = 40 + Math.pow(i, 1.4) * 8;
-                  return (
-                    <rect
-                      key={i}
-                      x={i * 36}
-                      y={-h}
-                      width={28}
-                      height={h}
-                      fill="#d4b962"
-                      opacity={0.3 + i * 0.08}
-                    />
-                  );
-                })}
-              </g>
-              <text x="60" y="60" fill="#d4b962" fontFamily="Inter, sans-serif" fontSize="11" letterSpacing="2">
-                THE HIDDEN COST OF COAL
-              </text>
-              <line x1="60" y1="80" x2="120" y2="80" stroke="#d4b962" strokeWidth="1" />
-            </svg>
+            <img
+              src="/assets/hidden-cost-coal.png"
+              alt="Coal and biomass fuels arranged beside a balance scale and procurement ledger"
+              loading="lazy"
+              decoding="async"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           </div>
         </a>
         <style>{`@media (max-width: 760px) {

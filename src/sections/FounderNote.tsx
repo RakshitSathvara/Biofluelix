@@ -15,7 +15,7 @@ function FounderPortrait() {
       }}
     >
       <img
-        src="/assets/anjali-nair.jpg"
+        src="/assets/anjali-nair.jpeg"
         alt="Anjali Nair, Founder of Biofuelix Solutions"
         loading="lazy"
         style={{
@@ -74,7 +74,17 @@ export function FounderNote() {
               </span>{" "}
               of the supply chain so you can focus on your core operations."
             </p>
-            <p style={{ color: "rgba(245, 240, 230, 0.68)", maxWidth: "52ch", marginBottom: 24 }}>
+            <p
+              style={{
+                fontFamily: "var(--font-script)",
+                fontSize: "clamp(25px, 2.4vw, 34px)",
+                fontWeight: 500,
+                lineHeight: 1.28,
+                color: "rgba(245, 240, 230, 0.78)",
+                maxWidth: "48ch",
+                marginBottom: 24,
+              }}
+            >
               When I first looked into the biomass industry, I didn't just see agricultural waste; I
               saw an untapped solution to one of our generation's greatest challenges. But I also saw
               the friction. Industrial leaders wanted to go green — they were held back by

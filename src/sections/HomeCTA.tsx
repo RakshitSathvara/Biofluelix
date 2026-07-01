@@ -25,7 +25,7 @@ export function HomeCTA() {
           style={{ margin: "32px auto 40px", textAlign: "center", transitionDelay: "0.2s" }}
         >
           Tell us about your boiler, your monthly tonnage, and your timeline. We'll come back with a
-          quote, a sample, and a transition plan.
+          quote, and a transition plan.
         </p>
         <div
           className="reveal"

@@ -27,11 +27,11 @@ function ContactHero() {
             consultants are here to help. Reach out through any of the channels below.
           </p>
           <div className="hero-cta-row">
-            <a href="mailto:info@biofuelix.com" className="btn btn-ghost">
-              info@biofuelix.com
+            <a href="mailto:connect@biofuelix.com" className="btn btn-ghost">
+              connect@biofuelix.com
             </a>
-            <a href="tel:+919000000000" className="btn btn-primary">
-              +91 90000 00000 <ArrowRight />
+            <a href="tel:+919898281520" className="btn btn-primary">
+              +91 9898281520 <ArrowRight />
             </a>
           </div>
         </div>
@@ -102,18 +102,18 @@ function ContactBody() {
           </div>
 
           <ContactBlock label="Email">
-            <a href="mailto:info@biofuelix.com">info@biofuelix.com</a>
+            <a href="mailto:biofuelixsolutions@gmail.com">biofuelixsolutions@gmail.com</a>
             <br />
-            <a href="mailto:sales@biofuelix.com">sales@biofuelix.com</a>
+            <a href="mailto:connect@biofuelix.com">connect@biofuelix.com</a>
           </ContactBlock>
 
           <ContactBlock label="Phone">
-            <a href="tel:+919000000000">+91 90000 00000</a>
+            <a href="tel:+919898281520">+91 9898281520</a>
           </ContactBlock>
 
           <ContactBlock label="WhatsApp Business">
             <a
-              href="https://wa.me/919000000000"
+              href="https://wa.me/919898281520"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
@@ -135,11 +135,9 @@ function ContactBody() {
           <ContactBlock label="Reg. Address" last>
             Biofuelix Solutions.
             <br />
-            Ghatlodia, Ahmedabad, Gujarat, India
+            218 Prodesk, Amrakunj Business Centre Nr KB Royal Phoenix, Tragad,
             <br />
-            <span style={{ color: "rgba(245,240,230,0.55)", fontSize: 13 }}>
-              Address details on request
-            </span>
+            Chandkheda, Ahmedabad, Gujarat-382424
           </ContactBlock>
           
         </div>
