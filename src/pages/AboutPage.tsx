@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "../components/icons";
-import { Pillars } from "../sections/Pillars";
 import { HomeCTA } from "../sections/HomeCTA";
 import { FounderPortrait } from "../sections/FounderNote";
 
@@ -428,7 +427,6 @@ export default function AboutPage() {
       {/* Image version is live. For the text-only layout, use <Mission /> instead. */}
       <Mission showImage />
       <ProblemSolution />
-      <Pillars />
       <CircularEconomy />
       <FullFounderNote />
       <HomeCTA />
